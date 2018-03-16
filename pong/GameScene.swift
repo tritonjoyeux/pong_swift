@@ -25,8 +25,8 @@ class GameScene: SKScene {
         self.elements["ball"] = self.childNode(withName: "ball") as! SKSpriteNode
         self.labels["score"] = self.childNode(withName: "score") as! SKLabelNode
         self.labels["timer"] = self.childNode(withName: "timer") as! SKLabelNode
-        let randx = arc4random_uniform(30) - 30
-        let randy = arc4random_uniform(30) - 30
+        let randx = 30
+        let randy = 30
         self.elements["ball"]?.physicsBody?.applyImpulse(CGVector(dx: Int(randx), dy: Int(randy)))
         let frameBody = SKPhysicsBody(edgeLoopFrom: self.frame)
         frameBody.friction = 0
@@ -70,8 +70,8 @@ class GameScene: SKScene {
         })
         
         let handleF = setTimeout(5, block: { () -> Void in
-            let randx = arc4random_uniform(30) - 30
-            let randy = arc4random_uniform(30) - 30
+            let randx = 30
+            let randy = 30
             self.elements["ball"]?.physicsBody?.applyImpulse(CGVector(dx: Int(randx), dy: Int(randy)))
         })
         handleF.invalidate()
